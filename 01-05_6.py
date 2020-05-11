@@ -1,20 +1,15 @@
-goods = []
-i=1
-while input("Что у вас?"):
-    number = int(input("Сколько у вас продуктов: "))
-    list = {}
-    while i =< number :
-        i +=1
-        list_name = input("Название: ")
-        list_prise = input("Цена: ")
-        list[list_name] = list_prise
-    goods.append(tuple([number, list]))
-print(goods)
-analitics = {}
-for good in goods:
-    for list_name, list_prise in good[1].items():
-        if list_name in analitics:
-            analitics[list_name].append(list_prise)
-        else:
-         analitics[list_name] = [list_prise]
-print(analitics)
+goods = int(input("Сколько будет товара "))
+n = 1
+my_dict = []
+my_list = []
+my_analys = {}
+while n <= goods:
+    my_dict = dict({'Название': input("Введите название "), 'Цена': input("Введите цену "),
+                    'Количество': input('Введите количество '), 'Ед.': input("Введите единицу измерения ")})
+    my_list.append((n, my_dict))
+    n += 1
+    my_analys = dict(
+        {'Название': my_dict.get('Название'), 'Цена': my_dict.get('Цена'), 'Количество': my_dict.get('Количество'),
+         'Ед.': my_dict.get('Ед.')})
+print(my_list)
+print(my_analys)
